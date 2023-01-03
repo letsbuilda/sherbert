@@ -7,4 +7,5 @@ on:
 jobs:
   publish:
     uses: darbiadev/.github/.github/workflows/rust-crates-io-publish.yaml@main
-    secrets: inherit
+    secrets:
+      CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
