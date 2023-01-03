@@ -1,18 +1,10 @@
 name: Rust - Publish to crates.io
 
 on:
-  workflow_dispatch:
   release:
     types: [released]
 
 jobs:
-  dump_contexts_to_log:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dump CARGO_REGISTRY_TOKEN
-        run: echo xray--${CARGO_REGISTRY_TOKEN}--xray
-        env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
   publish:
     uses: darbiadev/.github/.github/workflows/rust-crates-io-publish.yaml@main
     secrets:
