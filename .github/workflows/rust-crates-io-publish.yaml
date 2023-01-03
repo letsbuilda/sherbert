@@ -1,0 +1,10 @@
+name: Rust - Publish to crates.io
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  publish:
+    uses: darbiadev/.github/.github/workflows/rust-crates-io-publish.yaml@main
+    secrets: inherit
