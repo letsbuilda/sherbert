@@ -1,0 +1,15 @@
+[package]
+name = "sherbert"
+description = "Opinionated project tooling"
+version = "0.1.0"
+edition = "2021"
+authors = ["Bradley Reynolds <bradley.reynolds@darbia.dev>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/letsbuilda/sherbert/"
+keywords = ["cli"]
+categories = ["command-line-utilities"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
