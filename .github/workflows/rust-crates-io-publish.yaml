@@ -1,7 +1,6 @@
 name: Rust - Publish to crates.io
 
 on:
-  workflow_dispatch:
   release:
     types: [released]
 
