@@ -1,7 +1,7 @@
 [package]
 name = "sherbert"
 description = "Opinionated project tooling"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Bradley Reynolds <bradley.reynolds@darbia.dev>"]
 license = "MIT"
