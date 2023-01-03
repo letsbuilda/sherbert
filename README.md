@@ -1,0 +1,2 @@
+# sherbert
+Opinionated project tooling
