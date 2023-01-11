@@ -8,7 +8,11 @@ on:
   pull_request:
 
 jobs:
+  pre-commit:
+    uses: darbiadev/.github/.github/workflows/generic-precommit.yaml@main
+
   lint:
+    needs: pre-commit
     uses: darbiadev/.github/.github/workflows/rust-lint.yaml@main
 
   clippy:
