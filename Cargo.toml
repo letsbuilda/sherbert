@@ -10,6 +10,23 @@ repository = "https://github.com/letsbuilda/sherbert/"
 keywords = ["cli"]
 categories = ["command-line-utilities"]
 
+[lib]
+name = "sherbert"
+path = "src/sherbert/lib.rs"
+
+[[bin]]
+name = "sherbert"
+test = false
+doc = false
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = { version = "4.0.32", features = ["cargo"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+tracing-appender = "0.2"
+figment = { version = "0.10.8", features = ["env", "toml"] }
+dirs = "4.0.0"
+serde = { version = "1.0", features = ["derive"] }
+anyhow = "1.0.68"
