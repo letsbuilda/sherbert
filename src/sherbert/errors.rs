@@ -19,6 +19,7 @@ pub struct CliError {
 
 impl CliError {
     /// Create new error
+    #[must_use]
     pub fn new(error: anyhow::Error, code: i32) -> CliError {
         CliError {
             error: Some(error),
@@ -27,6 +28,7 @@ impl CliError {
     }
 
     /// Create new error from code
+    #[must_use]
     pub fn code(code: i32) -> CliError {
         CliError {
             error: None,

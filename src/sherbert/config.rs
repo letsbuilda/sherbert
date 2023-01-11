@@ -13,12 +13,18 @@ pub struct Config {
 
 impl Config {
     /// Creates a new config instance.
+    #[must_use]
     pub fn new(log_level: i8) -> Config {
         Config { log_level }
     }
 
-    /// Update the config from the CLI matches.
+    /// # Update the config from the CLI matches.
+    ///
+    /// # Panics
+    ///
+    /// Will panic if it can't read the `quiet` bool from the matches.
     pub fn update_from_matches(&mut self, matches: &ArgMatches) {
+        #![allow(clippy::cast_possible_wrap)]
         self.log_level = if *matches.get_one::<bool>("quiet").unwrap() {
             -1
         } else {
@@ -27,6 +33,7 @@ impl Config {
     }
 
     /// Get the configured log level.
+    #[must_use]
     pub fn level_filter(&self) -> tracing_subscriber::filter::LevelFilter {
         match self.log_level {
             -1 => tracing_subscriber::filter::LevelFilter::OFF,
